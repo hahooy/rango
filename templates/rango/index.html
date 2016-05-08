@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 {% load static %}
 
 <html>
@@ -12,5 +11,15 @@
 		<div><p>hello world! <strong>{{ boldmessage }}</strong></p></div>
 		<a href="/rango/about/">About</a>
 		<img src="{% static rango_pic %}"  alt="picture of rango"/>
+		{% if categories_set %}
+			<h2>Categories</h2>
+			<ul>
+				{% for category in categories_set %}
+					<li><a href="/rango/category/{{ category.slug }}/">{{ category }}</a></li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<h2>Empty</h2>
+		{% endif %}
 	</body>
 </html>
