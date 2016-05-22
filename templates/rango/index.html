@@ -18,6 +18,12 @@
 					<li><a href="/rango/category/{{ category.slug }}/">{{ category }}</a></li>
 				{% endfor %}
 			</ul>
+			<h2>Top five most viewed pages</h2>
+			<ul>
+				{% for page in top_five_viewed_pages %}
+					<li><a href="{{page.url}}">{{ page.title }}</a></li>
+				{% endfor %}
+			</ul>
 		{% else %}
 			<h2>Empty</h2>
 		{% endif %}
